@@ -3,11 +3,11 @@ class SearchTermsController < ApplicationController
 
   def index
     @search_terms = SearchTerm
-                      .select('search_terms.term, COUNT(user_searches.id) AS searches_count')
-                      .joins(:user_searches)
-                      .group('search_terms.term')
-                      .order('searches_count DESC')
-                      .limit(10)
+      .select('search_terms.term, COUNT(user_searches.id) AS searches_count')
+      .joins(:user_searches)
+      .group('search_terms.term')
+      .order('searches_count DESC')
+      .limit(10)
     respond_to do |format|
       format.html
       format.json { render json: @search_terms }
@@ -22,9 +22,9 @@ class SearchTermsController < ApplicationController
 
     if completed_search
       UserSearch.log_search(ip_address, completed_search)
-      flash[:notice] = "Search term processed"
+      flash[:notice] = 'Search term processed'
     else
-      flash[:alert] = "Incomplete search term"
+      flash[:alert] = 'Incomplete search term'
     end
     redirect_to search_terms_path
   end

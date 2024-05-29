@@ -18,6 +18,7 @@ class Trie
     current_node = @root
     prefix.each_char do |char|
       return nil unless current_node.children[char]
+
       current_node = current_node.children[char]
     end
     current_node
@@ -25,12 +26,13 @@ class Trie
 
   def search(word)
     node = search_prefix(word)
-    node && node.is_end_of_word
+    node&.is_end_of_word
   end
 
   def autocomplete(prefix)
     node = search_prefix(prefix)
     return [] unless node
+
     words = []
     dfs(node, prefix, words)
     words

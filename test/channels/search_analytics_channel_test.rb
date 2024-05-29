@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 class SearchAnalyticsChannelTest < ActionCable::Channel::TestCase
   # test "subscribes" do
