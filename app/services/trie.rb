@@ -26,7 +26,7 @@ class Trie
 
   def search(word)
     node = search_prefix(word)
-    node&.is_end_of_word
+    node&.is_end_of_word || false
   end
 
   def autocomplete(prefix)
