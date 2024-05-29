@@ -2,7 +2,10 @@
   "name": "searchbox_analytics",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:tobuya/searchbox_analytics.git",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tobuya/searchbox_analytics.git"
+  },
   "author": "tobuya <thomasobuya95@gmail.com>",
   "license": "MIT",
   "dependencies": {
@@ -12,5 +15,17 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3"
-  }
+  },
+  "description": "<a name=\"readme-top\"></a> [![Contributors](https://img.shields.io/github/contributors/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/graphs/contributors) [![LastUpdate](https://img.shields.io/github/last-commit/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/commits/main) [![Stargazers](https://img.shields.io/github/stars/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/stargazers) [![Issues](https://img.shields.io/github/issues/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/issues) [![License](https://img.shields.io/github/license/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/blob/main/LICENSE)",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/tobuya/searchbox_analytics/issues"
+  },
+  "homepage": "https://github.com/tobuya/searchbox_analytics#readme"
 }
