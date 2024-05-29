@@ -9,7 +9,7 @@ services:
     name: searchbox
     runtime: ruby
     plan: free
-    buildCommand: yarn install && bundle install && yarn run webpack && bundle exec rake assets:precompile
+    buildCommand: "./bin/render-build.sh"
     # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
