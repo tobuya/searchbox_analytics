@@ -11,6 +11,7 @@
 - [Real-Time Search Analytics](#real-time-search-analytics)
   - [🧰 Tech Stack  ](#-tech-stack--)
   - [✨ Key Features  ](#-key-features--)
+  - [🚀 Live Demo ](#-live-demo-)
   - [📘 Getting Started  ](#-getting-started--)
     - [📋 Prerequisites](#-prerequisites)
     - [📂 Setup](#-setup)
@@ -48,6 +49,13 @@ This Rails application provides a real-time search experience for users explorin
 - *Search Term Analytics:* Track what users are searching for and identify popular trends.
 - *IP-based Search Logging:* Record user searches without requiring user accounts (Devise not required).
 - *Action Cable Integration:* Enables real-time communication for search updates.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](#)
+- [Video Demo Link](#)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -118,7 +126,7 @@ rails server
 To run tests, run the following command:
 
 ```sh
-rspec spec --format doc
+bundle exec rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -141,7 +149,7 @@ This application currently focuses on recording user search data. Future develop
 - [ ] Top most searched terms over a specific timeframe.
 - [ ] Charts or graphs to represent search trends visually.
 - [ ] Ability to filter search data by time period or other criteria.
-
+- [ ] Test client-side logic using Capybara.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
