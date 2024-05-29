@@ -1,16 +1,17 @@
 <a name="readme-top"></a>
-[![Contributors](https://img.shields.io/github/contributors/tobuya/rails-template)](https://github.com/tobuya/rails-template/graphs/contributors)
-[![LastUpdate](https://img.shields.io/github/last-commit/tobuya/rails-template)](https://github.com/tobuya/rails-template/commits/main)
-[![Stargazers](https://img.shields.io/github/stars/tobuya/rails-template)](https://github.com/tobuya/rails-template/stargazers)
-[![Issues](https://img.shields.io/github/issues/tobuya/rails-template)](https://github.com/tobuya/rails-template/issues)
-[![License](https://img.shields.io/github/license/tobuya/rails-template)](https://github.com/tobuya/rails-template/blob/main/LICENSE)
+[![Contributors](https://img.shields.io/github/contributors/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/graphs/contributors)
+[![LastUpdate](https://img.shields.io/github/last-commit/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/commits/main)
+[![Stargazers](https://img.shields.io/github/stars/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/stargazers)
+[![Issues](https://img.shields.io/github/issues/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/issues)
+[![License](https://img.shields.io/github/license/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/blob/main/LICENSE)
 
 <details>
 <summary>Table of Contents</summary>
 
-- [Rails Template](#-rails-template)
+- [Real-Time Search Analytics](#real-time-search-analytics)
   - [🧰 Tech Stack  ](#-tech-stack--)
   - [✨ Key Features  ](#-key-features--)
+  - [🚀 Live Demo ](#-live-demo-)
   - [📘 Getting Started  ](#-getting-started--)
     - [📋 Prerequisites](#-prerequisites)
     - [📂 Setup](#-setup)
@@ -19,31 +20,42 @@
     - [💻 Usage](#-usage)
     - [🧪 Run tests](#-run-tests)
   - [👨‍🚀 Authors  ](#-authors--)
-  - [🎯 Future Features  ](#-future-features--)
-  - [🤝 Contribution  ](#-contribution--)
+  - [🎯 Analytics  ](#-analytics--)
+  - [How it Works ](#how-it-works-)
+  - [🤝 Contributions  ](#-contributions--)
   - [💖 Show Your Support  ](#-show-your-support--)
   - [🙏 Acknowledgements](#-acknowledgements)
   - [📜 License ](#-license-)
 </details>
 
-# Rails and PostgreSQL Template
+# Real-Time Search Analytics
 
-This is a template for creating Ruby on Rails applications with PostgreSQL as the chosen database. It provides a starting point for building robust web applications using the Rails framework and leveraging the power and reliability of PostgreSQL for data storage.
+This Rails application provides a real-time search experience for users exploring articles and offers analytics to understand user search trends.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🧰 Tech Stack  <a name="tech-stack"></a>
+
 - Ruby on Rails
 - PostgreSQL
+- Vanilla JS
+- CSS
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## ✨ Key Features  <a name="key-features"></a>
-- *Ruby on Rails:* The template is preconfigured with Ruby on Rails, a popular web application framework that follows the MVC (Model-View-Controller) architecture. Rails provides a rich set of features and conventions to streamline development and increase productivity.
 
-- *PostgreSQL Database:* PostgreSQL is a robust, open-source relational database management system known for its performance, scalability, and support for advanced SQL features. The template is set up to utilize PostgreSQL as the default database, allowing you to take advantage of its powerful capabilities.
+- *Real-time Search:* Users receive search suggestions and confirmation as they type their queries.
+- *Search Term Analytics:* Track what users are searching for and identify popular trends.
+- *IP-based Search Logging:* Record user searches without requiring user accounts (Devise not required).
+- *Action Cable Integration:* Enables real-time communication for search updates.
 
-- *Easy Setup:* The template comes with a ready-to-use Rails application structure and the necessary configuration for PostgreSQL. You can quickly get started by cloning this repository and customizing it to suit your specific project requirements.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](#)
+- [Video Demo Link](#)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -55,16 +67,17 @@ To run this project locally, you'll need to follow these steps.
 
 Make sure you have the following installed on your machine:
 - [Ruby 3.2.2 or higher](https://www.ruby-lang.org/en/)
-- [Rails 7.0.4 or higher](https://rubyonrails.org/)
-- [PostgreSQL 15.2 or higher](https://www.postgresql.org/)
+- [Rails 7.0.6 or higher](https://rubyonrails.org/)
+- [PostgreSQL 16.2 or higher](https://www.postgresql.org/)
 
 ### 📂 Setup
 
 Clone this repository to your desired folder.
 
 ```sh
-cd my-project
-git clone git@github.com:tobuya/rails-template.git
+cd my_desired_folder
+git clone git@github.com:tobuya/searchbox_analytics.git
+cd searchbox_analytics
 ```
 
 ### 📥 Installation
@@ -77,10 +90,8 @@ bundle install
 
 ### 💾 Database
 
-
 Configure the database connection
-- Open `config/database.yml` file and ensure that the database configuration matches your PostgreSQL setup by updating the `username`, `password`, and other relevant settings in the `default` section to match your PostgreSQL configuration.
-- Also, update the `development`, `test`, and `production` sections to match your project configuration.
+- Open `config/database.yml` file and ensure that the database configuration matches your PostgreSQL setup by updating the `username`, and `password`.
 
 Create the database by running the following command:
 
@@ -88,9 +99,8 @@ Create the database by running the following command:
 rails db:create
 ```
 
-*At this point, Ruby on Rails application with a PostgreSQL database is customized and can be modified to one's liking by adding models, controllers and other components to build their desired system*
-
 To run the migrations:
+
 ```sh
 rails db:migrate
 ```
@@ -100,6 +110,8 @@ To load the sample data, run:
 ```sh
 rails db:seed
 ```
+
+*Note:* This application uses Webpack for JavaScript management. Ensure you have Node.js and npm installed for Webpack to function properly.
 
 ### 💻 Usage
 
@@ -114,9 +126,7 @@ rails server
 To run tests, run the following command:
 
 ```sh
-rspec spec --format doc
-
-rubocop -A
+bundle exec rspec
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -132,17 +142,32 @@ rubocop -A
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🎯 Future Features  <a name="future-features"></a>
+## 🎯 Analytics  <a name="analytics"></a>
 
-- [ ] Features suggested from the Pull Request
+This application currently focuses on recording user search data. Future development will involve implementing functionalities to visualize search analytics and user trends. This might include displaying:
+
+- [ ] Top most searched terms over a specific timeframe.
+- [ ] Charts or graphs to represent search trends visually.
+- [ ] Ability to filter search data by time period or other criteria.
+- [ ] Test client-side logic using Capybara.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🤝 Contribution  <a name="contribution"></a>
+## How it Works <a name="how-it-works"></a>
 
-Contributions, issues, and feature requests are welcome! If you have any improvements, bug fixes, or additional features that you'd like to contribute, feel free to submit a pull request. Together, we can enhance this template and make it even more valuable for Rails and PostgreSQL developers.
+The application utilizes a Trie data structure for efficient search suggestions. As users type, the Trie helps find matching prefixes for the search term, providing real-time suggestions.
 
-Feel free to check the [issues page](https://github.com/tobuya/hello-rails-back-end/issues).
+User searches are logged based on IP addresses without requiring user accounts. This allows for basic search tracking without user authentication complexities.
+
+Action Cable is used to enable real-time communication between the server and client. When a user submits a search or receives a suggestion, data is exchanged using Action Cable for an interactive experience.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🤝 Contributions  <a name="contribution"></a>
+
+Contributions, issues, and feature requests are welcome! If you have any improvements or suggestions, feel free to create a pull request.
+
+Feel free to check the [issues page](https://github.com/tobuya/searchbox_analytics/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -154,7 +179,7 @@ If you like this project, please consider giving it a ⭐.
 
 ## 🙏 Acknowledgements
 
-I would like to acknowledge anyone who would like to contribute to this project. Feel free to customize the template further, adding your own models, controllers, and other components to build your desired application
+I would like to acknowledge Mr. Emil Hajric for giving me an opportunity and clear instructions on how to work on this project.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

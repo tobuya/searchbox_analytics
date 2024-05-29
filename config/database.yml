@@ -20,12 +20,12 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: your_postgresql_username
-  password: your_postgresql_password
+  username: postgres
+  password: Nyodero2011
 
 development:
   <<: *default
-  database: rails_template_development
+  database: searchbox_analytics_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,7 +59,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: rails_template_test
+  database: searchbox_analytics_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,6 +83,6 @@ test:
 #
 production:
   <<: *default
-  database: rails_template_production
-  username: rails_template
-  password: <%= ENV["RAILS_TEMPLATE_DATABASE_PASSWORD"] %>
+  database: searchbox_analytics_production
+  username: searchbox_analytics
+  password: <%= ENV["SEARCHBOX_ANALYTICS_DATABASE_PASSWORD"] %>
