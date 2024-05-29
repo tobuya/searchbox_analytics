@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Search Analytics</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', 'data-turbolinks-suppress-warning': true %>
+</head>
+<body>
+  <header>
+    <h1> Real-Time Search Analytics</h1>
+  </header>
+
+  <main>
+    <section id="search-section">
+      <%= form_with url: search_terms_path, local: false, id: 'search-form' do |form| %>
+        <div class="form-group">
+          <%= form.text_field :term, id: 'search-term', placeholder: "Type your search term..." %>
+          <%= form.submit 'Search', class: 'btn' %>
+        </div>
+      <% end %>
+    </section>
+
+    <section id="analytics-section">
+      <h2>Search Analytics</h2>
+      <ul id="search-terms">
+        <% @search_terms.each do |search_term| %>
+          <li><%= search_term.term %></li>
+        <% end %>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Tobuya</p>
+  </footer>
+
+</body>
+</html>
