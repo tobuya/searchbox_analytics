@@ -34,7 +34,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config config/webpack/production.js"
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack --config config/webpack/production.js",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider webpack serve --config config/webpack/development.js"
   },
   "bugs": {
     "url": "https://github.com/tobuya/searchbox_analytics/issues"
