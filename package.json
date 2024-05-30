@@ -29,7 +29,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode production"
   },
   "bugs": {
     "url": "https://github.com/tobuya/searchbox_analytics/issues"
