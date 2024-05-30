@@ -9,11 +9,18 @@
   "author": "tobuya <thomasobuya95@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@hotwired/stimulus": "^3.2.2",
+    "@hotwired/turbo-rails": "^8.0.4",
+    "@rails/activestorage": "^7.0.8-3",
+    "@rails/ujs": "^7.0.8-3",
     "@rails/webpacker": "^5.4.4",
+    "stimulus": "^3.2.2",
+    "turbolinks": "^5.2.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "webpack-dev-server": "^3"
   },
   "description": "<a name=\"readme-top\"></a> [![Contributors](https://img.shields.io/github/contributors/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/graphs/contributors) [![LastUpdate](https://img.shields.io/github/last-commit/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/commits/main) [![Stargazers](https://img.shields.io/github/stars/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/stargazers) [![Issues](https://img.shields.io/github/issues/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/issues) [![License](https://img.shields.io/github/license/tobuya/searchbox_analytics)](https://github.com/tobuya/searchbox_analytics/blob/main/LICENSE)",

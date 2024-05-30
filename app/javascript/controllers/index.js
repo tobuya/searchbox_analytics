@@ -1,11 +1,16 @@
-// Import and register all your controllers from the importmap under controllers/*
+// Import your application controller
+import { application } from 'controllers/application';
 
-import { application } from "controllers/application"
+// Import the necessary functions from Stimulus
+import { Application } from '@hotwired/stimulus';
+import { definitionsFromContext } from 'stimulus/webpack-helpers';
 
-// Eager load all controllers defined in the import map under controllers/**/*_controller
-import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
-eagerLoadControllersFrom("controllers", application)
+// Start the Stimulus application
+const stimulusApplication = Application.start();
 
-// Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
-// import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
-// lazyLoadControllersFrom("controllers", application)
+// Load all controllers from the 'controllers' directory
+const context = require.context('.', true, /_controller\.js$/);
+stimulusApplication.load(definitionsFromContext(context));
+
+// Register your application controller
+stimulusApplication.register('application', application);

@@ -4,12 +4,20 @@ import * as ActiveStorage from '@rails/activestorage'
 import "channels"
 import "@hotwired/turbo-rails"
 import "controllers"
-import "../assets/stylesheets/application"
 
 // Start Rails, Turbolinks, and ActiveStorage
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// Import and start Stimulus application
+import { Application } from '@hotwired/stimulus'
+import { definitionsFromContext } from 'stimulus/webpack-helpers'
+
+// Start Stimulus application
+const application = Application.start()
+const context = require.context('controllers', true, /\.js$/)
+application.load(definitionsFromContext(context))
 
 document.addEventListener('DOMContentLoaded', () => {
   const searchForm = document.getElementById('search-form')
