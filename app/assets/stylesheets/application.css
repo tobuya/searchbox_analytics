@@ -18,21 +18,29 @@ body {
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 header {
+  flex: 0.1;
   background-color: #4caf50;
   color: white;
   text-align: center;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
 }
 
 main {
+  flex: 0.85;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 #search-section {
-  margin-bottom: 2rem;
+  flex: 1;
 }
 
 .form-group {
@@ -45,7 +53,7 @@ main {
   padding: 0.5rem;
   font-size: 1rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -61,15 +69,25 @@ main {
 }
 
 #analytics-section {
-  margin-top: 2rem;
+  flex: 4;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
 }
 
-#search-terms {
+#analytics-section article,
+#analytics-section aside {
+  flex: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+}
+
+.search-terms {
   list-style-type: none;
   padding: 0;
 }
 
-#search-terms li {
+.search-terms li {
   background-color: white;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
@@ -78,11 +96,9 @@ main {
 }
 
 footer {
+  flex: 0.05;
   background-color: #4caf50;
   color: white;
   text-align: center;
-  padding: 1rem 0;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  padding: 0.5rem 0;
 }
