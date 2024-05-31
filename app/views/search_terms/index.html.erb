@@ -12,32 +12,41 @@
 </head>
 <body>
   <header>
-    <h1> Real-Time Search Analytics</h1>
+    <h1>Real-Time Search Analytics</h1>
   </header>
 
   <main>
     <section id="search-section">
       <%= form_with url: search_terms_path, local: false, id: 'search-form' do |form| %>
         <div class="form-group">
-          <%= form.text_field :term, id: 'search-term', placeholder: "Type your search term..." %>
+          <%= form.text_field :term, id: 'search-term', placeholder: "Type and search for an article here.." %>
           <%= form.submit 'Search', class: 'btn' %>
         </div>
       <% end %>
     </section>
 
     <section id="analytics-section">
-      <h2>Search Analytics</h2>
-      <ul id="search-terms">
-        <% @search_terms.each do |search_term| %>
-          <li><%= search_term.term %></li>
-        <% end %>
-      </ul>
+      <article>
+        <h2>All available articles</h2>
+        <ul class="search-terms">
+          <% @all_search_terms.each do |search_term| %>
+            <li><%= search_term.term %></li>
+          <% end %>
+        </ul>
+      </article>
+      <aside>
+        <h2>Trending articles</h2>
+        <ul class="search-terms">
+          <% @trending_search_terms.each do |search_term| %>
+            <li><%= search_term.term %></li>
+          <% end %>
+        </ul>
+      </aside>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2024 Tobuya</p>
   </footer>
-
 </body>
 </html>
